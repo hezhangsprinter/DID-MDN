@@ -51,8 +51,8 @@ used to train the proposed density-aware network.
 ## Testing
 	python demo.py --dataroot ./your_dataroot --valDataroot ./your_dataroot --netG ./pre_trained/netG_epoch_9.pth   
 
-
-*Make sure you download the vgg model that used for perceotual loss and put it in the ./IDCGAN/per_loss/models
+## Dataset
+Training and testing data will be released soon.
 
 
 
