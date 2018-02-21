@@ -26,34 +26,34 @@ used to train the proposed density-aware network.
 
 
 
-## Prepare
-Instal torch7
-
-Install nngraph
-
-Install hdf5
+## Prerequisites:
+1. Linux
+2. Python 2 or 3
+3. CPU or NVIDIA GPU + CUDA CuDNN (CUDA 8.0)
  
-Download the dataset from (https://drive.google.com/open?id=0Bw2e6Q0nQQvGbi1xV1Yxd09rY2s) 
-and put the dataset folder into the "IDCGAN" folder
+## Installation:
+1. Install PyTorch and dependencies from http://pytorch.org (Ubuntu+Python2.7)
+   (conda install pytorch torchvision -c pytorch)
+
+2. Install Torch vision from the source.
+   (git clone https://github.com/pytorch/vision
+   cd vision
+   python setup.py install)
+
+3. Install python package: 
+   numpy, scipy, PIL, pdb
+   
+## Demo using pre-trained model
+	python demo.py --dataroot ./facades/github --valDataroot ./facades/github --netG ./pre_trained/netG_epoch_9.pth   
 
 ## Training
-
-	DATA_ROOT=./datasets/rain name=rain which_direction=BtoA th train.lua
-
+	Training will be released soon.
 ## Testing
+	python demo.py --dataroot ./your_dataroot --valDataroot ./your_dataroot --netG ./pre_trained/netG_epoch_9.pth   
 
-	DATA_ROOT=./datasets/rain name=rain which_direction=BtoA phase=test_nature th test.lua
-
-
-##  Testing using ID-CGAN model
-The trained ID-CGAN model  and our training and testing datasets can be found at 
-(https://drive.google.com/open?id=0Bw2e6Q0nQQvGbi1xV1Yxd09rY2s)
 
 *Make sure you download the vgg model that used for perceotual loss and put it in the ./IDCGAN/per_loss/models
 
 
 
 ##Acknowledgments##
-
-Code borrows heavily from [[pix2pix](https://github.com/phillipi/pix2pix)]
- and [[Perceptual Loss](https://github.com/jcjohnson/fast-neural-style)]. Thanks for the sharing.
