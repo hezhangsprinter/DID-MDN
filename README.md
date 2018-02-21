@@ -19,7 +19,7 @@ used to train the proposed density-aware network.
 	  year={2018}
 	} 
 
-<img src="sample_results/121_input.jpg" width="400px" height="200px"/><img src="sample_results/121_input.jpg" width="400px" height="200px"/>
+<img src="sample_results/121_input.jpg" width="400px" height="200px"/><img src="sample_results/121_our.jpg" width="400px" height="200px"/>
 
 
 
