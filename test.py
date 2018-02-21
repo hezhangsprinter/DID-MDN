@@ -153,14 +153,14 @@ label_d = Variable(label_d.cuda())
 
 # Load pre-trained density-classification network
 net_label=net1.vgg19ca()
-net_label.load_state_dict(torch.load('./checkpoints_test_classificanew/netG_epoch_9.pth'))
+net_label.load_state_dict(torch.load('./classification/netG_epoch_9.pth'))
 net_label=net_label.cuda()
 
 
 # Load pre-trained residual-getting network
 
 residue_net=net2.Dense_rain_residual()
-residue_net.load_state_dict(torch.load('./checkpoints_train_all_new_modelnewdata_heavy/netG_epoch_6.pth'))
+residue_net.load_state_dict(torch.load('./residual_heavy/netG_epoch_6.pth'))
 residue_net=residue_net.cuda()
 
 def norm_ip(img, min, max):
