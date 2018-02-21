@@ -1,6 +1,6 @@
 # DID-MDN
 ## Density-aware Single Image De-raining using a Multi-stream Dense Network
-[He Zhang](https://sites.google.com/site/hezhangsprinter)], [Vishal M. Patel](http://www.rci.rutgers.edu/~vmp93/)]
+[He Zhang](https://sites.google.com/site/hezhangsprinter), [Vishal M. Patel](http://www.rci.rutgers.edu/~vmp93/)
 
 [[Paper Link](https://arxiv.org/abs/1701.05957)] (CVPR'18)
 
