@@ -4,9 +4,9 @@ from PIL import Image
 import os
 import os.path
 import numpy as np
-import lingua as sla
+# import lingua as sla
 # import guidedfilter.guidedfilter as guidedfilter
-from guidedfilter import guidedfilter
+# from guidedfilter import guidedfilter
 
 
 def tikhonov_filter(s, lmbda, npd=16):
