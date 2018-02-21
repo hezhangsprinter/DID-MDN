@@ -60,6 +60,6 @@ Pre-trained residule-aware model can be downloaded at (Put it in the folder 'res
 Training and testing data will be released soon.
 
 
-Acknowledgments
+## Acknowledgments
 
 Great thanks for the insight discussion with [Vishwanath Sindagi](http://www.vishwanathsindagi.com/) and help from [Hang Zhang](http://hangzh.com/)
