@@ -2,7 +2,7 @@
 ## Density-aware Single Image De-raining using a Multi-stream Dense Network
 [He Zhang](https://sites.google.com/site/hezhangsprinter), [Vishal M. Patel](http://www.rci.rutgers.edu/~vmp93/)
 
-[[Paper Link](https://arxiv.org/abs/1701.05957)] (CVPR'18)
+[[Paper Link](https://arxiv.org/abs/1802.07412)] (CVPR'18)
 
 We present a novel density-aware multi-stream densely connected convolutional neural
 network-based algorithm, called DID-MDN, for joint rain density estimation and de-raining. The proposed method
