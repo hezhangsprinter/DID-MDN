@@ -57,8 +57,8 @@ Pre-trained residule-aware model can be downloaded at (Put it in the folder 'res
 	python demo.py --dataroot ./your_dataroot --valDataroot ./your_dataroot --netG ./pre_trained/netG_epoch_9.pth   
 
 ## Dataset
-Training and testing data will be released soon.
-
+Training (heavy, medium, light) and testing (TestA and Test B) data can be downloaded at the following link:
+https://drive.google.com/file/d/1cMXWICiblTsRl1zjN8FizF5hXOpVOJz4/view?usp=sharing
 
 ## Acknowledgments
 
