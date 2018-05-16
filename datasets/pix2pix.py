@@ -4,55 +4,7 @@ from PIL import Image
 import os
 import os.path
 import numpy as np
-# import lingua as sla
-# import guidedfilter.guidedfilter as guidedfilter
-# from guidedfilter import guidedfilter
 
-
-def tikhonov_filter(s, lmbda, npd=16):
-    r"""Lowpass filter based on Tikhonov regularization.
-    Lowpass filter image(s) and return low and high frequency
-    components, consisting of the lowpass filtered image and its
-    difference with the input image. The lowpass filter is equivalent to
-    Tikhonov regularization with `lmbda` as the regularization parameter
-    and a discrete gradient as the operator in the regularization term,
-    i.e. the lowpass component is the solution to
-    .. math::
-      \mathrm{argmin}_\mathbf{x} \; (1/2) \left\|\mathbf{x} - \mathbf{s}
-      \right\|_2^2 + (\lambda / 2) \sum_i \| G_i \mathbf{x} \|_2^2 \;\;,
-    where :math:`\mathbf{s}` is the input image, :math:`\lambda` is the
-    regularization parameter, and :math:`G_i` is an operator that
-    computes the discrete gradient along image axis :math:`i`. Once the
-    lowpass component :math:`\mathbf{x}` has been computed, the highpass
-    component is just :math:`\mathbf{s} - \mathbf{x}`.
-    Parameters
-    ----------
-    s : array_like
-      Input image or array of images.
-    lmbda : float
-      Regularization parameter controlling lowpass filtering.
-    npd : int, optional (default=16)
-      Number of samples to pad at image boundaries.
-    Returns
-    -------
-    sl : array_like
-      Lowpass image or array of images.
-    sh : array_like
-      Highpass image or array of images.
-    """
-
-    grv = np.array([-1.0, 1.0]).reshape([2, 1])
-    gcv = np.array([-1.0, 1.0]).reshape([1, 2])
-    Gr = sla.fftn(grv, (s.shape[0]+2*npd, s.shape[1]+2*npd), (0, 1))
-    Gc = sla.fftn(gcv, (s.shape[0]+2*npd, s.shape[1]+2*npd), (0, 1))
-    A = 1.0 + lmbda*np.conj(Gr)*Gr + lmbda*np.conj(Gc)*Gc
-    if s.ndim > 2:
-        A = A[(slice(None),)*2 + (np.newaxis,)*(s.ndim-2)]
-    sp = np.pad(s, ((npd, npd),)*2 + ((0, 0),)*(s.ndim-2), 'symmetric')
-    slp = np.real(sla.ifftn(sla.fftn(sp, axes=(0, 1)) / A, axes=(0, 1)))
-    sl = slp[npd:(slp.shape[0]-npd), npd:(slp.shape[1]-npd)]
-    sh = s - sl
-    return sl.astype(s.dtype), sh.astype(s.dtype)
 
 
 IMG_EXTENSIONS = [
