@@ -14,8 +14,8 @@ import torchvision.utils as vutils
 from torch.autograd import Variable
 # import models.UNet as net
 from misc import *
-import models.dehaze2  as net
-import models.dehaze22  as net2
+import models.derain_residual  as net2
+import models.derain_dense  as net1
 
 from myutils.vgg16 import Vgg16
 from myutils import utils
@@ -97,7 +97,7 @@ outputChannelSize= opt.outputChannelSize
 
 
 
-netG=net.vgg19ca()
+netG=net1.vgg19ca()
 netG.load_state_dict(torch.load('./classification/netG_epoch_9.pth'))
 print(netG)
 
@@ -137,7 +137,7 @@ target = Variable(target)
 input = Variable(input)
 
 
-residue_net=net2.Dense_rain4()
+residue_net=net2.Dense_rain_residual()
 residue_net.load_state_dict(torch.load('./residual_heavy/netG_epoch_6.pth'))
 residue_net=residue_net.cuda()
 
@@ -196,12 +196,12 @@ for epoch in range(opt.niter):
     label = netG(residue)
 
 
-    label_final=label.max(1)[1]
-    zz1=label_final.data.cpu().numpy()
-    zz2=target_label.data.cpu().numpy()
+    #label_final=label.max(1)[1]
+    #zz1=label_final.data.cpu().numpy()
+    #zz2=target_label.data.cpu().numpy()
 
-    print(zz1)
-    print(zz2)
+    #print(zz1)
+    #print(zz2)
 
     netG.zero_grad() # start to update G
 
@@ -210,7 +210,7 @@ for epoch in range(opt.niter):
     class_loss.backward()
     L_img = class_loss
 
-    # optimizerG.step()
+    optimizerG.step()
     ganIterations += 1
 
     if ganIterations % opt.display == 0:
