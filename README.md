@@ -61,6 +61,9 @@ Pre-trained residule-aware model can be downloaded at (Put it in the folder 'res
 ## Testing
 	python demo.py --dataroot ./your_dataroot --valDataroot ./your_dataroot --netG ./pre_trained/netG_epoch_9.pth   
 
+## Reproduce
+
+To reproduce the quantative results shown in the paper, please save both generated and target using python demo.py  into the .png format and then test using offline tool such as the psnr and ssim measurment in python or matlab. 
 ## Dataset
 Training (heavy, medium, light) and testing (TestA and Test B) data can be downloaded at the following link:
 https://drive.google.com/file/d/1cMXWICiblTsRl1zjN8FizF5hXOpVOJz4/view?usp=sharing
