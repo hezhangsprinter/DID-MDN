@@ -69,6 +69,9 @@ To reproduce the quantitative results shown in the paper, please save both gener
 Training (heavy, medium, light) and testing (TestA and Test B) data can be downloaded at the following link:
 https://drive.google.com/file/d/1cMXWICiblTsRl1zjN8FizF5hXOpVOJz4/view?usp=sharing
 
+
+## License
+Code is under MIT license. 
 ## Acknowledgments
 
 Great thanks for the insight discussion with [Vishwanath Sindagi](http://www.vishwanathsindagi.com/) and help from [Hang Zhang](http://hangzh.com/)
